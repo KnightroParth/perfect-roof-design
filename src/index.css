@@ -119,6 +119,34 @@
   .animate-fade-up-delay-3 {
     animation: fadeUp 0.6s ease-out 0.3s both;
   }
+
+  .hero-btn-sheen {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    --sheen-alpha: 0.45;
+  }
+
+  .hero-btn-sheen-muted {
+    --sheen-alpha: 0.28;
+  }
+
+  .hero-btn-sheen::after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -65%;
+    width: 42%;
+    height: 180%;
+    pointer-events: none;
+    background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, var(--sheen-alpha)) 45%, transparent 100%);
+    transform: skewX(-20deg) translateX(0);
+    opacity: 0;
+  }
+
+  .hero-btn-sheen:hover::after {
+    animation: buttonSheen 0.85s ease-out;
+  }
 }
 
 @keyframes fadeUp {
@@ -129,5 +157,38 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes glassSheen {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(370%);
+    opacity: 1;
+  }
+  60%,
+  100% {
+    transform: translateX(370%);
+    opacity: 0;
+  }
+}
+
+@keyframes buttonSheen {
+  0% {
+    opacity: 0;
+    transform: skewX(-20deg) translateX(0);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: skewX(-20deg) translateX(420%);
   }
 }

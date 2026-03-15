@@ -18,18 +18,18 @@ import shirur           from "@/assets/proj-shirur.jpeg";
 import turbhe           from "@/assets/proj-turbhe.jpeg";
 
 const projects = [
-  { imgs: [anandnagarAfter, anandnagarBefore], title: "Anandnagar MIDC, Ambernath",  category: "Arch Roofing" },
-  { imgs: [chikhloli],                          title: "Chikhloli MIDC, Ambernath",   category: "Steel Structure" },
-  { imgs: [pale1, pale2],                       title: "PALE MIDC, Ambernath",        category: "Steel Structure" },
-  { imgs: [pimpleJagtap],                       title: "Pimple Jagtap, Maharashtra",  category: "Steel Structure" },
-  { imgs: [shirur],                             title: "Shirur, Maharashtra",          category: "Steel Structure" },
-  { imgs: [majiwada1, majiwada2],               title: "Majiwada FOB, Thane",          category: "Steel Structure" },
-  { imgs: [cocaCola],                           title: "Coca Cola, Wada",              category: "Colour Coated Roofing" },
-  { imgs: [ceatTyres],                          title: "Ceat Tyres, Mumbai",           category: "Roof Replacement" },
-  { imgs: [badlapur],                           title: "Badlapur MIDC",                category: "Galvanized Roofing" },
-  { imgs: [turbhe],                             title: "Turbhe, Navi Mumbai",          category: "Profile Roofing" },
-  { imgs: [kudal1, kudal2],                     title: "Kudal, Maharashtra",           category: "Profile Roofing" },
-  { imgs: [dehuroad1, dehuroad2],               title: "Dehu Road, Pune",              category: "Industrial Roofing" },
+  { imgs: [anandnagarAfter, anandnagarBefore], title: "Anandnagar MIDC, Ambernath" },
+  { imgs: [chikhloli],                          title: "Chikhloli MIDC, Ambernath" },
+  { imgs: [pale2, pale1],                       title: "PALE MIDC, Ambernath" },
+  { imgs: [pimpleJagtap],                       title: "Pimple Jagtap, Maharashtra" },
+  { imgs: [shirur],                             title: "Shirur, Maharashtra" },
+  { imgs: [majiwada2, majiwada1],               title: "Majiwada FOB, Thane" },
+  { imgs: [cocaCola],                           title: "Coca Cola, Wada" },
+  { imgs: [ceatTyres],                          title: "Ceat Tyres, Mumbai" },
+  { imgs: [badlapur],                           title: "Badlapur MIDC" },
+  { imgs: [turbhe],                             title: "Turbhe, Navi Mumbai" },
+  { imgs: [kudal2, kudal1],                     title: "Kudal, Maharashtra" },
+  { imgs: [dehuroad2, dehuroad1],               title: "Dehu Road, Pune" },
 ];
 
 const Projects = () => (
@@ -78,8 +78,7 @@ const Projects = () => (
               </div>
 
               <div className="p-5">
-                <span className="text-xs font-medium text-accent uppercase tracking-wider">{p.category}</span>
-                <h3 className="font-heading font-semibold mt-1">{p.title}</h3>
+                <h3 className="font-heading font-semibold">{p.title}</h3>
               </div>
             </div>
           </ScrollFadeIn>

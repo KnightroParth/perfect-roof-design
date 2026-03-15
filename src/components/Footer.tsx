@@ -22,6 +22,7 @@ const Footer = () => (
             { label: "Products", path: "/products" },
             { label: "About Us", path: "/about" },
             { label: "Projects", path: "/projects" },
+            { label: "Contact", path: "/contact" },
           ].map((item) => (
             <li key={item.path}>
               <Link to={item.path} className="hover:opacity-100 transition-opacity">

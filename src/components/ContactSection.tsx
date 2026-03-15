@@ -128,14 +128,14 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">Address</div>
-                    <div className="font-medium">104, Telange Estate, Opposite Vir Rubber Company,<br />K.B. Road, Near Forest Naka, Chikhloli Ambernath W,<br />Ambernath, Thane‑421501, Maharashtra</div>
+                    <div className="font-medium">104, Telange Estate, Opposite Vir Rubber Company,<br />K.B. Road, Near Forest Naka, Chikhloli Ambernath W,<br />Thane-421501, Maharashtra</div>
                   </div>
                 </div>
               </div>
 
               <div className="rounded-lg overflow-hidden border border-border h-64 md:h-80">
                 <iframe
-                  src="https://www.google.com/maps?q=104,+Telange+Estate,+Opposite+Vir+Rubber+Company,+K.B.+Road,+Near+Forest+Naka,+Chikhloli+Ambernath+W,+Ambernath,+Thane-421501,+Maharashtra&output=embed"
+                  src="https://www.google.com/maps?q=104,+Telange+Estate,+Opposite+Vir+Rubber+Company,+K.B.+Road,+Near+Forest+Naka,+Chikhloli+Ambernath+W,+Thane-421501,+Maharashtra&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
