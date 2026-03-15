@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="PRS favicon">
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#F7E7A1"/>
+      <stop offset="45%" stop-color="#E0BC54"/>
+      <stop offset="100%" stop-color="#B88408"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="28" fill="hsl(222 25% 9%)" stroke="hsl(222 16% 24%)" stroke-width="4"/>
+  <text
+    x="50%"
+    y="54%"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="108"
+    font-weight="700"
+    letter-spacing="2"
+    fill="url(#gold)"
+  >PRS</text>
+</svg>

@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
     <div className="container py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
       <div>
-        <h3 className="font-heading text-xl font-bold mb-4">Perfect Roofing Solutions</h3>
+        <img
+          src="/logo.png"
+          alt="Perfect Roofing Solutions logo"
+          className="h-16 md:h-20 w-auto object-contain mb-4"
+          loading="lazy"
+        />
         <p className="text-sm opacity-80 leading-relaxed">
           Manufacturer & supplier of premium roofing materials, offers installation services, and products include industrial turbines. Built on quality, driven by durability.
         </p>
