@@ -93,6 +93,32 @@ const stats = [
 const Index = () => {
   const { hash } = useLocation();
 
+  const handleCardTilt = (e: React.MouseEvent<HTMLElement>) => {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      return;
+    }
+
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width;
+    const py = (e.clientY - rect.top) / rect.height;
+    const rotateY = (px - 0.5) * 10;
+    const rotateX = (0.5 - py) * 8;
+
+    card.style.setProperty("--tilt-x", `${rotateX.toFixed(2)}deg`);
+    card.style.setProperty("--tilt-y", `${rotateY.toFixed(2)}deg`);
+    card.style.setProperty("--glare-x", `${(px * 100).toFixed(1)}%`);
+    card.style.setProperty("--glare-y", `${(py * 100).toFixed(1)}%`);
+  };
+
+  const resetCardTilt = (e: React.MouseEvent<HTMLElement>) => {
+    const card = e.currentTarget;
+    card.style.setProperty("--tilt-x", "0deg");
+    card.style.setProperty("--tilt-y", "0deg");
+    card.style.setProperty("--glare-x", "50%");
+    card.style.setProperty("--glare-y", "50%");
+  };
+
   // scroll to contact section when hash is present
   useEffect(() => {
     if (hash === "#contact") {
@@ -168,7 +194,12 @@ const Index = () => {
               { src: "/coca-cola-logo.svg", alt: "Coca-Cola" },
               { src: "/ceat-logo.svg", alt: "CEAT Tyres" },
             ].map((logo) => (
-              <div key={logo.alt} className="px-6 py-4 rounded-lg border border-border bg-card">
+              <div
+                key={logo.alt}
+                className="tilt-card px-6 py-4 rounded-lg border border-border bg-card"
+                onMouseMove={handleCardTilt}
+                onMouseLeave={resetCardTilt}
+              >
                 <img
                   src={logo.src}
                   alt={logo.alt}
@@ -191,7 +222,11 @@ const Index = () => {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s) => (
               <ScrollFadeIn key={s.title}>
-                <div className="group relative p-7 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-accent/40 transition-all duration-300 h-full">
+                <div
+                  className="tilt-card group relative p-7 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-accent/40 transition-all duration-300 h-full"
+                  onMouseMove={handleCardTilt}
+                  onMouseLeave={resetCardTilt}
+                >
                   <div className="w-12 h-12 rounded-lg bg-accent/15 flex items-center justify-center text-accent mb-5 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                     <s.icon size={22} />
                   </div>
@@ -220,7 +255,9 @@ const Index = () => {
               <ScrollFadeIn key={p.name}>
                 <Link
                   to="/products"
-                  className="group block rounded-xl overflow-hidden bg-card shadow-sm border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                  className="tilt-card group block rounded-xl overflow-hidden bg-card shadow-sm border border-border transition-all duration-300"
+                  onMouseMove={handleCardTilt}
+                  onMouseLeave={resetCardTilt}
                 >
                   <div className="aspect-[4/3] overflow-hidden relative">
                     <img
@@ -246,7 +283,7 @@ const Index = () => {
           <div className="mt-10 text-center">
             <Link
               to="/products"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-border text-foreground font-semibold hover:border-accent hover:text-accent transition-colors"
+              className="hero-btn-sheen inline-flex items-center gap-2 px-6 py-3 rounded-md border border-border text-foreground font-semibold hover:border-accent hover:text-accent transition-all hover:scale-105"
             >
               See Full Product Catalogue <ArrowRight size={16} />
             </Link>
@@ -259,12 +296,16 @@ const Index = () => {
         <div className="container">
           <ScrollFadeIn>
             <p className="text-accent text-xs font-bold uppercase tracking-widest text-center mb-2">Why Us</p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-center">Why Choose Perfect Roofing</h2>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-center">Why Choose "Perfect Roofing Solutions"</h2>
           </ScrollFadeIn>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {reasons.map((r) => (
               <ScrollFadeIn key={r.title}>
-                <div className="group bg-card rounded-xl p-6 border-l-4 border-border hover:border-l-accent shadow-sm hover:shadow-md transition-all duration-300">
+                <div
+                  className="tilt-card group bg-card rounded-xl p-6 border-l-4 border-border hover:border-l-accent shadow-sm transition-all duration-300"
+                  onMouseMove={handleCardTilt}
+                  onMouseLeave={resetCardTilt}
+                >
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent mb-4 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                     <r.icon size={22} />
                   </div>
@@ -329,13 +370,13 @@ const Index = () => {
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-accent text-white font-semibold hover:bg-accent/90 transition-all hover:scale-105 shadow-lg shadow-accent/30"
+                className="hero-btn-sheen inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-accent text-white font-semibold hover:bg-accent/90 transition-all hover:scale-105 shadow-lg shadow-accent/30"
               >
                 Request a Free Quote <ArrowRight size={18} />
               </Link>
               <Link
                 to="/projects"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md border border-white/25 text-white font-semibold hover:bg-white/10 transition-all"
+                className="hero-btn-sheen hero-btn-sheen-muted inline-flex items-center gap-2 px-8 py-3.5 rounded-md border border-white/25 text-white font-semibold hover:bg-white/10 transition-all hover:scale-105"
               >
                 View Our Work
               </Link>

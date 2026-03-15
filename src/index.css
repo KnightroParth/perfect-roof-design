@@ -147,6 +147,55 @@
   .hero-btn-sheen:hover::after {
     animation: buttonSheen 0.85s ease-out;
   }
+
+  .tilt-card {
+    --tilt-x: 0deg;
+    --tilt-y: 0deg;
+    --glare-x: 50%;
+    --glare-y: 50%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(0) scale(1);
+    transition: transform 280ms ease, box-shadow 280ms ease;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    will-change: transform;
+  }
+
+  .tilt-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(220px circle at var(--glare-x) var(--glare-y), rgba(255, 255, 255, 0.22), transparent 65%);
+    opacity: 0;
+    transition: opacity 240ms ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .tilt-card:hover {
+      transform: perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateY(-4px) scale(1.02);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.18);
+    }
+
+    .tilt-card:hover::after {
+      opacity: 1;
+    }
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    .tilt-card {
+      transform: none;
+    }
+
+    .tilt-card:active {
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+    }
+
+    .tilt-card::after {
+      display: none;
+    }
+  }
 }
 
 @keyframes fadeUp {
