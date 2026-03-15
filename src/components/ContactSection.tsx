@@ -66,7 +66,7 @@ const ContactSection = () => {
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-accent/50"
-                      placeholder="+91 88797 93777"
+                      placeholder="+91 9999999999"
                     />
                   </div>
                 </div>
