@@ -15,7 +15,7 @@ const Navbar = () => {
   const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains("dark"));
   const [heroNav, setHeroNav] = useState(false);
   const location = useLocation();
-  const logoSrc = "/perfect-roof-design/logo.png";
+  const logoSrc = `${import.meta.env.BASE_URL}logo.png`;
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
