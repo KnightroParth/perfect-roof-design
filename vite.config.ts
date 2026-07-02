@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/perfect-roof-design/",
+  base: process.env.DEPLOY_TARGET === "gh-pages" ? "/perfect-roof-design/" : "/",
   server: {
     host: "::",
     port: 8080,
