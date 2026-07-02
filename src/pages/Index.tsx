@@ -191,8 +191,8 @@ const Index = () => {
           <p className="text-center text-sm md:text-base uppercase tracking-widest text-muted-foreground font-semibold">Trusted by / Projects delivered for</p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {[
-              { src: "/perfect-roof-design/coca-cola-logo.svg", alt: "Coca-Cola" },
-              { src: "/perfect-roof-design/ceat-logo.svg", alt: "CEAT Tyres" },
+              { src: `${import.meta.env.BASE_URL}coca-cola-logo.svg`, alt: "Coca-Cola" },
+              { src: `${import.meta.env.BASE_URL}ceat-logo.svg`, alt: "CEAT Tyres" },
             ].map((logo) => (
               <div
                 key={logo.alt}
