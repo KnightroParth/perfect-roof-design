@@ -1,5 +1,5 @@
 import ScrollFadeIn from "@/components/ScrollFadeIn";
-import { usePageSEO } from "@/hooks/usePageSEO";
+import { usePageSEO } from "@/hooks/use-page-seo";
 import anandnagarAfter  from "@/assets/proj-anandnagar-after.jpeg";
 import anandnagarBefore from "@/assets/proj-anandnagar-before.jpeg";
 import badlapur         from "@/assets/proj-badlapur.jpeg";
@@ -36,7 +36,7 @@ const projects = [
 const Projects = () => {
   usePageSEO({
     title: "Roofing Projects Portfolio | Perfect Roofing Solutions Maharashtra",
-    description: "View our roofing installation projects across Maharashtra — MIDC Ambernath, Thane, Mumbai, Navi Mumbai, Pune, Kudal, Badlapur and more. 500+ completed projects.",
+    description: "View our roofing installation projects across Maharashtra: MIDC Ambernath, Thane, Mumbai, Navi Mumbai, Pune, Kudal, Badlapur and more. 500+ completed projects.",
     canonical: "https://perfectroofingsolutions.vercel.app/projects",
     ogTitle: "Roofing Projects Portfolio | Perfect Roofing Solutions",
     ogDescription: "500+ roofing projects delivered across Maharashtra. Browse our portfolio of industrial and commercial installations.",
@@ -74,7 +74,7 @@ const Projects = () => {
                 {p.imgs[1] && (
                   <img
                     src={p.imgs[1]}
-                    alt={`${p.title} — view 2`}
+                    alt={`${p.title} - view 2`}
                     className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out opacity-0 scale-105 group-hover:opacity-100 group-hover:scale-100"
                     loading="lazy"
                   />

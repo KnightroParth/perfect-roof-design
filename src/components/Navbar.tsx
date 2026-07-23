@@ -82,7 +82,7 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop nav — centred */}
+        {/* Desktop nav - centred */}
         <ul className="hidden md:flex items-center gap-8 mx-auto">
           {navItems.map((item) => (
             <li key={item.path}>
@@ -123,7 +123,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile — theme + hamburger */}
+        {/* Mobile - theme + hamburger */}
         <div className="flex md:hidden items-center gap-2 ml-auto">
           <button
             onClick={() => setIsDark(!isDark)}

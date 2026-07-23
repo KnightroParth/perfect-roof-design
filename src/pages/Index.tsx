@@ -7,7 +7,7 @@ import colourImg  from "@/assets/colour-coated-sheet.jpg";
 import galvImg    from "@/assets/galvanized-sheet.jpg";
 import profileImg from "@/assets/profile-sheet.jpg";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
-import { usePageSEO } from "@/hooks/usePageSEO";
+import { usePageSEO } from "@/hooks/use-page-seo";
 
 const products = [
   { name: "Polycarbonate Sheets",   img: polyImg,    tag: "Multiwall & UV-Protected" },
@@ -41,7 +41,7 @@ const services = [
 
 const reasons = [
   { icon: Shield, title: "Premium Quality",     desc: "JSW, AMNS & Tata approved raw materials tested for Indian climate extremes." },
-  { icon: Award,  title: "15+ Years Expertise", desc: "Established 2010 — serving industries across Maharashtra with proven results." },
+  { icon: Award,  title: "15+ Years Expertise", desc: "Established 2010, serving industries across Maharashtra with proven results." },
   { icon: Clock,  title: "On-Time Delivery",    desc: "Reliable supply chain and on-site execution. Your timeline is our commitment." },
   { icon: Wrench, title: "Custom Solutions",    desc: "Tailored profiles, spans and specifications to match your exact structural needs." },
 ];
@@ -96,7 +96,7 @@ const Index = () => {
 
   usePageSEO({
     title: "Perfect Roofing Solutions | Roofing Sheets Manufacturer in Maharashtra",
-    description: "Perfect Roofing Solutions — manufacturer & supplier of polycarbonate, colour coated, galvanized and profile roofing sheets in Maharashtra. JSW & AMNS approved. Est. 2010.",
+    description: "Perfect Roofing Solutions: manufacturer & supplier of polycarbonate, colour coated, galvanized and profile roofing sheets in Maharashtra. JSW & AMNS approved. Est. 2010.",
     canonical: "https://perfectroofingsolutions.vercel.app/",
     ogTitle: "Perfect Roofing Solutions | Durable Roofing Sheets",
     ogDescription: "Premium roofing sheets manufactured and installed across Maharashtra. 500+ projects, 15+ years experience.",
@@ -160,7 +160,7 @@ const Index = () => {
             <span className="text-accent">Solutions</span> Built to Last
           </h1>
           <p className="mt-6 text-base md:text-xl max-w-xl text-white/80 animate-fade-up-delay-1">
-            Premium polycarbonate, colour coated &amp; galvanized roofing sheets &mdash; manufactured and installed across Maharashtra.
+            Premium polycarbonate, colour coated &amp; galvanized roofing sheets, manufactured and installed across Maharashtra.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 animate-fade-up-delay-2">
             <Link
@@ -224,7 +224,7 @@ const Index = () => {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-10 md:h-12 w-auto max-w-full object-contain filter grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300"
+                  className="h-10 md:h-12 w-auto max-w-full object-contain opacity-100 transition-all duration-300"
                   loading="lazy"
                   width="160"
                   height="48"
@@ -270,7 +270,7 @@ const Index = () => {
             <p className="text-accent text-sm md:text-base font-bold uppercase tracking-widest text-center mb-2">What We Supply</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-center">Our Product Range</h2>
             <p className="mt-3 text-muted-foreground text-center max-w-lg mx-auto">
-              JSW, AMNS &amp; Tata approved sheets &mdash; available in standard and custom specifications.
+              JSW, AMNS &amp; Tata approved sheets, available in standard and custom specifications.
             </p>
           </ScrollFadeIn>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -388,7 +388,7 @@ const Index = () => {
               Ready to Start<br className="hidden sm:block" /> Your Project?
             </h2>
             <p className="mt-5 text-lg opacity-70 max-w-md mx-auto">
-              Free site consultation, quotation &amp; material guidance &mdash; anywhere in Maharashtra.
+              Free site consultation, quotation &amp; material guidance, anywhere in Maharashtra.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
               <Link

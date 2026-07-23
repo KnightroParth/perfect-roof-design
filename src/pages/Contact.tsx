@@ -1,5 +1,5 @@
 import ContactSection from "@/components/ContactSection";
-import { usePageSEO } from "@/hooks/usePageSEO";
+import { usePageSEO } from "@/hooks/use-page-seo";
 
 const Contact = () => {
   usePageSEO({

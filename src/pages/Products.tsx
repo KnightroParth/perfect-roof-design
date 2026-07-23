@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
-import { usePageSEO } from "@/hooks/usePageSEO";
+import { usePageSEO } from "@/hooks/use-page-seo";
 import { ArrowRight, Wind, Ruler, Building2, Package, Settings, Lock, Home, Droplets, Layers, RefreshCw } from "lucide-react";
 import polyImg    from "@/assets/polycarbonate-sheet.jpg";
 import colourImg  from "@/assets/colour-coated-sheet.jpg";
@@ -30,14 +30,14 @@ const featured = [
     img: colourImg,
     tag: "JSW / AMNS Approved",
     desc: "Pre-painted galvanized steel sheets (JSW, AMNS, Tata) in a wide range of RAL colours with superior corrosion resistance.",
-    specs: ["0.40 – 0.60 mm thickness", "Full RAL colour range", "High-tensile steel"],
+    specs: ["0.40 to 0.60 mm thickness", "Full RAL colour range", "High-tensile steel"],
   },
   {
     name: "Galvanized Roofing Sheets",
     img: galvImg,
     tag: "Hot-Dip Galvanized",
     desc: "Hot-dip galvanized steel sheets offering superior rust protection and long service life for heavy industrial roofing.",
-    specs: ["Z120 – Z275 coating", "Anti-corrosion treated", "Industrial grade"],
+    specs: ["Z120 to Z275 coating", "Anti-corrosion treated", "Industrial grade"],
   },
   {
     name: "Profile Roofing Sheets",
@@ -53,11 +53,11 @@ const extended = [
   { icon: RefreshCw, img: curvedImg,        name: "Curved / Arch Roofing Sheets", desc: "Pre-curved colour coated sheets for barrel vault and arch-style structures." },
   { icon: Layers,    img: deckingImg,       name: "Decking Sheets",               desc: "Structural steel deck profiles for composite floor slab construction." },
   { icon: Droplets,  img: upvcImg,          name: "UPVC Roofing Sheets",          desc: "UPVC multilayer sheets for corrosive and chemical-resistant environments." },
-  { icon: Wind,      img: ventilatorImg,    name: "SS Turbo Air Ventilators",     desc: "Wind-driven stainless steel ridge ventilators — no electricity required." },
+  { icon: Wind,      img: ventilatorImg,    name: "SS Turbo Air Ventilators",     desc: "Wind-driven stainless steel ridge ventilators (no electricity required)." },
   { icon: Ruler,     img: zPurlinImg,       name: "Z Purlins",                    desc: "Cold-formed Z purlin sections for structural secondary roofing framework." },
   { icon: Package,   img: epsPanelImg,      name: "EPS Sandwich Panels",          desc: "Insulated metal sandwich panels for temperature-controlled buildings." },
   { icon: Settings,  img: accessoriesImg,   name: "Roofing Screws & Accessories", desc: "J-bolts, self-drilling screws, flashings, ridge caps and all ancillaries." },
-  { icon: Building2, img: structuralShedImg,name: "Structural Industrial Sheds",  desc: "PEB and conventional structural steel sheds — designed and erected on site." },
+  { icon: Building2, img: structuralShedImg,name: "Structural Industrial Sheds",  desc: "PEB and conventional structural steel sheds, designed and erected on site." },
   { icon: Home,      img: terraceShadeImg,  name: "Terrace Roofing Shade",        desc: "Lightweight GI and polycarbonate shade structures for residential terraces." },
 ];
 
@@ -67,7 +67,7 @@ const Products = () => {
     description: "Buy polycarbonate, colour coated, galvanized, profile, clip-lock and UPVC roofing sheets. Also Z purlins, EPS panels, ventilators & structural sheds. JSW & AMNS approved.",
     canonical: "https://perfectroofingsolutions.vercel.app/products",
     ogTitle: "Roofing Sheet Products | Perfect Roofing Solutions",
-    ogDescription: "Complete range of roofing sheets and structural products — manufactured and supplied across Maharashtra.",
+    ogDescription: "Complete range of roofing sheets and structural products, manufactured and supplied across Maharashtra.",
     ogUrl: "https://perfectroofingsolutions.vercel.app/products",
   });
 
@@ -80,7 +80,7 @@ const Products = () => {
           <p className="text-accent text-sm md:text-base font-bold uppercase tracking-widest mb-3">What We Supply</p>
           <h1 className="font-heading text-4xl md:text-5xl font-bold">Our Products</h1>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            High-quality roofing sheets and structural products — JSW, AMNS &amp; Tata approved, manufactured to international standards.
+            High-quality roofing sheets and structural products, JSW, AMNS &amp; Tata approved, manufactured to international standards.
           </p>
         </ScrollFadeIn>
       </div>

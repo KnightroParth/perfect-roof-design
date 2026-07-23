@@ -1,7 +1,7 @@
 import { CheckCircle, MapPin, Users, Calendar, Award } from "lucide-react";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
 import heroImg from "@/assets/hero-roofing.jpg";
-import { usePageSEO } from "@/hooks/usePageSEO";
+import { usePageSEO } from "@/hooks/use-page-seo";
 
 const values = [
   "JSW, AMNS & Tata approved raw materials",
@@ -14,7 +14,7 @@ const values = [
 
 const milestones = [
   { icon: Calendar, value: "Est. 2010",   label: "15+ Years in Business" },
-  { icon: Users,    value: "26 – 50",     label: "Expert Team Members"  },
+  { icon: Users,    value: "26 to 50",    label: "Expert Team Members"  },
   { icon: Award,    value: "4.6 / 5",     label: "IndiaMART Rating"     },
   { icon: MapPin,   value: "Maharashtra", label: "Pan-State Coverage"   },
 ];
@@ -95,7 +95,7 @@ const About = () => {
           <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">Our Mission</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold">You Envision, We Build</h2>
           <p className="mt-6 text-primary-foreground/70 leading-relaxed text-lg">
-            To provide durable, cost-effective and sustainable roofing solutions that protect structures and people —
+            To provide durable, cost-effective and sustainable roofing solutions that protect structures and people,
             while maintaining the highest standards of quality and service excellence across every project we undertake.
           </p>
         </ScrollFadeIn>
