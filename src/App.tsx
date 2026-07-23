@@ -19,7 +19,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/perfect-roof-design">
+      <BrowserRouter>
         <ScrollToTop />
         <Layout>
           <Routes>

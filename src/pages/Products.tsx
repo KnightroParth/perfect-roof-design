@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { ArrowRight, Wind, Ruler, Building2, Package, Settings, Lock, Home, Droplets, Layers, RefreshCw } from "lucide-react";
 import polyImg    from "@/assets/polycarbonate-sheet.jpg";
 import colourImg  from "@/assets/colour-coated-sheet.jpg";
@@ -60,7 +61,17 @@ const extended = [
   { icon: Home,      img: terraceShadeImg,  name: "Terrace Roofing Shade",        desc: "Lightweight GI and polycarbonate shade structures for residential terraces." },
 ];
 
-const Products = () => (
+const Products = () => {
+  usePageSEO({
+    title: "Roofing Sheet Products | Perfect Roofing Solutions Maharashtra",
+    description: "Buy polycarbonate, colour coated, galvanized, profile, clip-lock and UPVC roofing sheets. Also Z purlins, EPS panels, ventilators & structural sheds. JSW & AMNS approved.",
+    canonical: "https://perfectroofingsolutions.vercel.app/products",
+    ogTitle: "Roofing Sheet Products | Perfect Roofing Solutions",
+    ogDescription: "Complete range of roofing sheets and structural products — manufactured and supplied across Maharashtra.",
+    ogUrl: "https://perfectroofingsolutions.vercel.app/products",
+  });
+
+  return (
   <>
     {/* Page hero */}
     <section className="py-20 md:py-28 bg-secondary">
@@ -152,6 +163,7 @@ const Products = () => (
       </div>
     </section>
   </>
-);
+  );
+};
 
 export default Products;

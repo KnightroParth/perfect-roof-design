@@ -1,4 +1,5 @@
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import anandnagarAfter  from "@/assets/proj-anandnagar-after.jpeg";
 import anandnagarBefore from "@/assets/proj-anandnagar-before.jpeg";
 import badlapur         from "@/assets/proj-badlapur.jpeg";
@@ -32,7 +33,17 @@ const projects = [
   { imgs: [dehuroad2, dehuroad1],               title: "Dehu Road, Pune" },
 ];
 
-const Projects = () => (
+const Projects = () => {
+  usePageSEO({
+    title: "Roofing Projects Portfolio | Perfect Roofing Solutions Maharashtra",
+    description: "View our roofing installation projects across Maharashtra — MIDC Ambernath, Thane, Mumbai, Navi Mumbai, Pune, Kudal, Badlapur and more. 500+ completed projects.",
+    canonical: "https://perfectroofingsolutions.vercel.app/projects",
+    ogTitle: "Roofing Projects Portfolio | Perfect Roofing Solutions",
+    ogDescription: "500+ roofing projects delivered across Maharashtra. Browse our portfolio of industrial and commercial installations.",
+    ogUrl: "https://perfectroofingsolutions.vercel.app/projects",
+  });
+
+  return (
   <section className="py-20 md:py-28">
     <div className="container">
       <ScrollFadeIn>
@@ -86,6 +97,7 @@ const Projects = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Projects;

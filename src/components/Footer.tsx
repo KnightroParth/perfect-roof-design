@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="container py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
       <div>
         <img
-          src={`${import.meta.env.BASE_URL}logo.png`}
+          src={`/logo.png`}
           alt="Perfect Roofing Solutions logo"
           className="h-16 md:h-20 w-auto object-contain mb-4"
           loading="lazy"

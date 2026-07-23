@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /assets/
+
+Sitemap: https://perfectroofingsolutions.vercel.app/sitemap.xml

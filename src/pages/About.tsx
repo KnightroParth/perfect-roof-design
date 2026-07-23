@@ -1,6 +1,7 @@
 import { CheckCircle, MapPin, Users, Calendar, Award } from "lucide-react";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
 import heroImg from "@/assets/hero-roofing.jpg";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 const values = [
   "JSW, AMNS & Tata approved raw materials",
@@ -18,7 +19,17 @@ const milestones = [
   { icon: MapPin,   value: "Maharashtra", label: "Pan-State Coverage"   },
 ];
 
-const About = () => (
+const About = () => {
+  usePageSEO({
+    title: "About Perfect Roofing Solutions | Roofing Manufacturer Since 2010",
+    description: "Est. 2010 in Ambernath, Thane. Perfect Roofing Solutions is a TrustSEAL verified manufacturer of roofing sheets and structural steel solutions across Maharashtra.",
+    canonical: "https://perfectroofingsolutions.vercel.app/about",
+    ogTitle: "About Perfect Roofing Solutions",
+    ogDescription: "15+ years of roofing expertise. Manufacturer & supplier of JSW, AMNS and Tata-grade roofing sheets across Maharashtra.",
+    ogUrl: "https://perfectroofingsolutions.vercel.app/about",
+  });
+
+  return (
   <>
     {/* Intro */}
     <section className="py-20 md:py-28">
@@ -91,6 +102,7 @@ const About = () => (
       </div>
     </section>
   </>
-);
+  );
+};
 
 export default About;

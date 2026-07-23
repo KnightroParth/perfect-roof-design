@@ -7,6 +7,7 @@ import colourImg  from "@/assets/colour-coated-sheet.jpg";
 import galvImg    from "@/assets/galvanized-sheet.jpg";
 import profileImg from "@/assets/profile-sheet.jpg";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 const products = [
   { name: "Polycarbonate Sheets",   img: polyImg,    tag: "Multiwall & UV-Protected" },
@@ -92,6 +93,15 @@ const stats = [
 
 const Index = () => {
   const { hash } = useLocation();
+
+  usePageSEO({
+    title: "Perfect Roofing Solutions | Roofing Sheets Manufacturer in Maharashtra",
+    description: "Perfect Roofing Solutions — manufacturer & supplier of polycarbonate, colour coated, galvanized and profile roofing sheets in Maharashtra. JSW & AMNS approved. Est. 2010.",
+    canonical: "https://perfectroofingsolutions.vercel.app/",
+    ogTitle: "Perfect Roofing Solutions | Durable Roofing Sheets",
+    ogDescription: "Premium roofing sheets manufactured and installed across Maharashtra. 500+ projects, 15+ years experience.",
+    ogUrl: "https://perfectroofingsolutions.vercel.app/",
+  });
 
   const handleCardTilt = (e: React.MouseEvent<HTMLElement>) => {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
@@ -191,8 +201,8 @@ const Index = () => {
           <p className="text-center text-sm md:text-base uppercase tracking-widest text-muted-foreground font-semibold">Trusted by / Projects delivered for</p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {[
-              { src: `${import.meta.env.BASE_URL}coca-cola-logo.svg`, alt: "Coca-Cola" },
-              { src: `${import.meta.env.BASE_URL}ceat-logo.svg`, alt: "CEAT Tyres" },
+              { src: "/coca-cola-logo.svg", alt: "Coca-Cola" },
+              { src: "/ceat-logo.svg", alt: "CEAT Tyres" },
             ].map((logo) => (
               <div
                 key={logo.alt}
