@@ -203,28 +203,28 @@ const Index = () => {
             {[
               { src: "/coca-cola-logo.svg", alt: "Coca-Cola" },
               { src: "/ceat-logo.svg", alt: "CEAT Tyres" },
-              { src: "/indian-railways-logo.svg", alt: "Indian Railways" },
+              { src: "/indian-railways-logo.svg", alt: "Indian Railways", className: "h-14 md:h-[58px]" },
               { src: "/cadbury-logo.svg", alt: "Cadbury" },
-              { src: "/suhana-logo.jpeg", alt: "Suhana Masala" },
+              { src: "/everest-logo.png", alt: "Everest" },
               { src: "/coca-cola-logo.svg", alt: "Coca-Cola" },
               { src: "/ceat-logo.svg", alt: "CEAT Tyres" },
-              { src: "/indian-railways-logo.svg", alt: "Indian Railways" },
+              { src: "/indian-railways-logo.svg", alt: "Indian Railways", className: "h-14 md:h-[58px]" },
               { src: "/cadbury-logo.svg", alt: "Cadbury" },
-              { src: "/suhana-logo.jpeg", alt: "Suhana Masala" },
+              { src: "/everest-logo.png", alt: "Everest" },
               { src: "/coca-cola-logo.svg", alt: "Coca-Cola" },
               { src: "/ceat-logo.svg", alt: "CEAT Tyres" },
-              { src: "/indian-railways-logo.svg", alt: "Indian Railways" },
+              { src: "/indian-railways-logo.svg", alt: "Indian Railways", className: "h-14 md:h-[58px]" },
               { src: "/cadbury-logo.svg", alt: "Cadbury" },
-              { src: "/suhana-logo.jpeg", alt: "Suhana Masala" },
+              { src: "/everest-logo.png", alt: "Everest" },
             ].map((logo, idx) => (
               <div
                 key={`${logo.alt}-${idx}`}
-                className="inline-flex items-center justify-center px-6 py-4 rounded-xl border border-border/80 bg-card shadow-sm hover:shadow-md transition-all h-20 w-44 md:w-52 shrink-0"
+                className="inline-flex items-center justify-center px-6 py-2.5 rounded-xl border border-border/80 bg-card shadow-sm hover:shadow-md transition-all h-20 w-44 md:w-52 shrink-0"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-10 md:h-12 w-auto max-w-full object-contain opacity-100 transition-all duration-300"
+                  className={`${logo.className || "h-10 md:h-12"} w-auto max-w-full object-contain opacity-100 transition-all duration-300`}
                   loading="lazy"
                   width="160"
                   height="48"
