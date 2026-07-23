@@ -84,6 +84,10 @@ export default {
           "0%":   { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        marqueeReverse: {
+          "0%":   { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
         fadeUp: {
           "0%":   { opacity: "0", transform: "translateY(28px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
@@ -98,6 +102,7 @@ export default {
         "accordion-up":    "accordion-up 0.2s ease-out",
         "ken-burns":       "kenBurns 24s ease-in-out infinite",
         "marquee":         "marquee 30s linear infinite",
+        "marquee-reverse": "marqueeReverse 25s linear infinite",
         "fade-up":         "fadeUp 0.6s ease-out both",
         "fade-up-delay-1": "fadeUp 0.6s 0.15s ease-out both",
         "fade-up-delay-2": "fadeUp 0.6s 0.30s ease-out both",

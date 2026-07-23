@@ -154,28 +154,24 @@ const Index = () => {
         </div>
 
         {/* Hero copy */}
-        <div className="container relative z-10 pb-16 pt-40">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/40 bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest mb-6 animate-fade-up">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            Maharashtra&rsquo;s Trusted Roofing Partner &middot; Est. 2010
-          </div>
-          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-3xl leading-tight animate-fade-up-delay-1">
+        <div className="container relative z-10 pb-16 pt-36">
+          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-3xl leading-tight animate-fade-up">
             Durable Roofing<br />
             <span className="text-accent">Solutions</span> Built to Last
           </h1>
-          <p className="mt-6 text-base md:text-xl max-w-xl text-white/75 animate-fade-up-delay-2">
+          <p className="mt-6 text-base md:text-xl max-w-xl text-white/80 animate-fade-up-delay-1">
             Premium polycarbonate, colour coated &amp; galvanized roofing sheets &mdash; manufactured and installed across Maharashtra.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 animate-fade-up-delay-2">
             <Link
               to="/products"
-              className="hero-btn-sheen inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-accent text-white font-semibold hover:bg-accent/90 transition-all hover:scale-105 shadow-lg shadow-accent/30"
+              className="hero-btn-sheen inline-flex items-center gap-2 px-7 py-3.5 rounded-md bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-all hover:scale-[1.02] shadow-lg shadow-accent/25"
             >
               Explore Products <ArrowRight size={18} />
             </Link>
             <Link
               to="/contact"
-              className="hero-btn-sheen hero-btn-sheen-muted inline-flex items-center gap-2 px-7 py-3.5 rounded-md border border-white/25 text-white font-semibold hover:bg-white/10 backdrop-blur-sm transition-all hover:scale-105"
+              className="hero-btn-sheen hero-btn-sheen-muted inline-flex items-center gap-2 px-7 py-3.5 rounded-md border border-white/30 text-white font-semibold hover:bg-white/10 backdrop-blur-sm transition-all hover:scale-[1.02]"
             >
               Request a Quote
             </Link>
@@ -183,38 +179,55 @@ const Index = () => {
         </div>
 
         {/* Stats bar */}
-        <div className="relative z-10 bg-white/5 border-t border-white/10 backdrop-blur-sm">
+        <div className="relative z-10 bg-slate-950/60 border-t border-white/10 backdrop-blur-md">
           <div className="container grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
             {stats.map((s) => (
               <div key={s.label} className="py-5 text-center">
                 <div className="font-heading text-2xl md:text-3xl font-bold text-accent">{s.value}</div>
-                <div className="text-xs text-white/60 mt-0.5">{s.label}</div>
+                <div className="text-xs text-white/70 mt-0.5 font-medium">{s.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trusted by */}
-      <section id="trusted-strip" className="py-10 bg-secondary border-y border-border">
-        <div className="container">
-          <p className="text-center text-sm md:text-base uppercase tracking-widest text-muted-foreground font-semibold">Trusted by / Projects delivered for</p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-6">
+      {/* Trusted by Infinite Marquee (Left to Right) */}
+      <section id="trusted-strip" className="py-12 bg-secondary/60 border-y border-border overflow-hidden">
+        <div className="container mb-6">
+          <p className="text-center text-xs md:text-sm uppercase tracking-widest text-muted-foreground font-bold">
+            Trusted by Industry Leaders &amp; Major Projects Delivered For
+          </p>
+        </div>
+        <div className="relative w-full overflow-hidden flex [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+          <div className="flex items-center gap-6 md:gap-8 animate-marquee-reverse whitespace-nowrap shrink-0 py-2">
             {[
               { src: "/coca-cola-logo.svg", alt: "Coca-Cola" },
               { src: "/ceat-logo.svg", alt: "CEAT Tyres" },
-            ].map((logo) => (
+              { src: "/indian-railways-logo.svg", alt: "Indian Railways" },
+              { src: "/cadbury-logo.svg", alt: "Cadbury" },
+              { src: "/suhana-logo.jpeg", alt: "Suhana Masala" },
+              { src: "/coca-cola-logo.svg", alt: "Coca-Cola" },
+              { src: "/ceat-logo.svg", alt: "CEAT Tyres" },
+              { src: "/indian-railways-logo.svg", alt: "Indian Railways" },
+              { src: "/cadbury-logo.svg", alt: "Cadbury" },
+              { src: "/suhana-logo.jpeg", alt: "Suhana Masala" },
+              { src: "/coca-cola-logo.svg", alt: "Coca-Cola" },
+              { src: "/ceat-logo.svg", alt: "CEAT Tyres" },
+              { src: "/indian-railways-logo.svg", alt: "Indian Railways" },
+              { src: "/cadbury-logo.svg", alt: "Cadbury" },
+              { src: "/suhana-logo.jpeg", alt: "Suhana Masala" },
+            ].map((logo, idx) => (
               <div
-                key={logo.alt}
-                className="tilt-card px-6 py-4 rounded-lg border border-border bg-card"
-                onMouseMove={handleCardTilt}
-                onMouseLeave={resetCardTilt}
+                key={`${logo.alt}-${idx}`}
+                className="inline-flex items-center justify-center px-6 py-4 rounded-xl border border-border/80 bg-card shadow-sm hover:shadow-md transition-all h-20 w-44 md:w-52 shrink-0"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-12 md:h-16 w-auto object-contain opacity-85 hover:opacity-100 transition-opacity"
+                  className="h-10 md:h-12 w-auto max-w-full object-contain filter grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300"
                   loading="lazy"
+                  width="160"
+                  height="48"
                 />
               </div>
             ))}
