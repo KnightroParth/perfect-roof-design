@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Uncommitable To-Do list & Environment variables
+TODO.md
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+

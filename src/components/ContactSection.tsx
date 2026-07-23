@@ -1,14 +1,49 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, MessageCircle, Send } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Send, Loader2 } from "lucide-react";
 import ScrollFadeIn from "@/components/ScrollFadeIn";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setErrorMessage("");
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey || "YOUR_ACCESS_KEY_HERE",
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          message: form.message,
+          subject: `New Roofing Inquiry from ${form.name}`,
+          from_name: "Perfect Roofing Solutions Web Form",
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(result.message || "Unable to send inquiry. Please try again.");
+      }
+    } catch (err) {
+      setErrorMessage("Network error. Please check your internet connection.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputClass =
@@ -37,7 +72,7 @@ const ContactSection = () => {
                     <Send size={28} />
                   </div>
                   <h3 className="font-heading text-2xl font-bold text-white">Thank You!</h3>
-                  <p className="mt-2 text-white/60">We'll get back to you within 24 hours.</p>
+                  <p className="mt-2 text-white/60">We've received your message and will get back to you within 24 hours.</p>
                 </div>
               </div>
             ) : (
@@ -45,6 +80,12 @@ const ContactSection = () => {
                 onSubmit={handleSubmit}
                 className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-8 space-y-5 shadow-xl shadow-black/20"
               >
+                {errorMessage && (
+                  <div className="p-3 rounded-lg border border-red-500/40 bg-red-500/10 text-red-200 text-xs font-medium text-center">
+                    {errorMessage}
+                  </div>
+                )}
+
                 {/* Full Name */}
                 <div>
                   <label className={labelClass}>Full Name</label>
@@ -99,9 +140,16 @@ const ContactSection = () => {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-md shadow-accent/25"
+                  disabled={submitting}
+                  className="w-full px-6 py-3 rounded-lg bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-md shadow-accent/25 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Inquiry
+                  {submitting ? (
+                    <>
+                      <Loader2 size={18} className="animate-spin" /> Sending...
+                    </>
+                  ) : (
+                    "Send Inquiry"
+                  )}
                 </button>
               </form>
             )}
@@ -134,8 +182,8 @@ const ContactSection = () => {
                   </div>
                   <div className="min-w-0">
                     <div className="text-xs font-semibold uppercase tracking-wider text-white/55">Email</div>
-                    <a href="mailto:info@perfectroofing.in" className="text-sm font-semibold text-white hover:text-accent transition-colors break-all">
-                      info@perfectroofing.in
+                    <a href="mailto:knightrovertmorningstar@gmail.com" className="text-sm font-semibold text-white hover:text-accent transition-colors break-all">
+                      knightrovertmorningstar@gmail.com
                     </a>
                   </div>
                 </div>
